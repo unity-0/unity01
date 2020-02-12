@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from hasan.themexlab.com/new/lillah-fund-html/index-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Feb 2020 08:50:19 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <title>LillahFund || Charity and Donation HTML5 Template</title>
+
+
+
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="{{  asset('front/css/style.css') }}" >
+    <!-- responsive stylesheet -->
+    <link rel="stylesheet" href="{{  asset('front/css/responsive.css') }}" >
+
+</head>
+
+    <body>
+    class="page-wrapper">
+
+
+
+        {% block header %}
+            <header class="header">
+                <div class="container">
+                    <div class="logo pull-left">
+                        <a href="index.html">
+                            <img src="{{  asset('front/img/resources/logo.png') }}" alt="Awesome Image"/>
+                        </a>
+                    </div>
+                    <div class="header-right-info pull-right clearfix">
+                        <div class="single-header-info">
+                            <div class="icon-box">
+                                <div class="inner-box">
+                                    <i class="flaticon-interface-2"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>EMAIL</h3>
+                                <p>companyname@mail.com</p>
+                            </div>
+                        </div>
+                        <div class="single-header-info">
+                            <div class="icon-box">
+                                <div class="inner-box">
+                                    <i class="flaticon-telephone"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3>Call Now</h3>
+                                <p><b>(732) 803-010-03</b></p>
+                            </div>
+                        </div>
+                        <div class="single-header-info">
+                            <!-- Modal: donate now Starts -->
+                            <a class="thm-btn" data-toggle="modal" href="#modal-donate-now">Donate Now</a>
+                            <div class="modal fade" id="modal-donate-now" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog style-one" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Make a Donation</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="donation-form-outer">
+                                                <form action="http://hasan.themexlab.com/new/lillah-fund-html/contact.html" method="post">
+
+                                                    <!--Form Portlet-->
+                                                    <div class="form-portlet">
+                                                        <h3>Donation Amount</h3>
+
+                                                        <div class="row clearfix">
+                                                            <div class="form-group col-xs-12 clearfix">
+
+                                                                <div class="radio-select">
+                                                                    <input type="radio" id="amount-1" name="sel-amount">
+                                                                    <label for="amount-1">$10</label>
+                                                                </div>
+
+                                                                <div class="radio-select">
+                                                                    <input type="radio" checked="" id="amount-2" name="sel-amount">
+                                                                    <label for="amount-2">$25</label>
+                                                                </div>
+
+                                                                <div class="radio-select">
+                                                                    <input type="radio" id="amount-3" name="sel-amount">
+                                                                    <label for="amount-3">$50</label>
+                                                                </div>
+
+                                                                <div class="radio-select">
+                                                                    <input type="radio" id="amount-4" name="sel-amount">
+                                                                    <label for="amount-4">$100</label>
+                                                                </div>
+
+                                                                <div class="radio-select">
+                                                                    <input type="radio" id="amount-5" name="sel-amount">
+                                                                    <label for="amount-5">$150</label>
+                                                                </div>
+
+                                                                <div class="radio-select">
+                                                                    <input type="radio" id="amount-6" name="sel-amount">
+                                                                    <label for="amount-6">$200</label>
+                                                                </div>
+
+                                                                <div class="radio-select">
+                                                                    OR
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="form-group col-xs-12">
+
+                                                                <input type="text" placeholder="Other Amount" value="" name="other-amount">
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <!--Form Portlet-->
+                                                    <div class="form-portlet">
+                                                        <h3>Billing Information</h3>
+
+                                                        <div class="row clearfix">
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Card Number <span class="required">*</span></div>
+                                                                <input type="text" required="" placeholder="Card Number" value="" name="name">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Security Code (CVC) <span class="required">*</span></div>
+                                                                <input type="text" required="" placeholder="Security Code" value="" name="name">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Name <span class="required">*</span></div>
+                                                                <input type="text" required="" placeholder="First Name" value="" name="name">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Email <span class="required">*</span></div>
+                                                                <input type="email" required="" placeholder="Email" value="" name="name">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Phone <span class="required">*</span></div>
+                                                                <input type="text" required="" placeholder="Phone" value="" name="name">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Address <span class="required">*</span></div>
+                                                                <input type="text" required="" placeholder="Address 1" value="" name="name">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">City <span class="required">*</span></div>
+                                                                <select>
+                                                                    <option>City</option>
+                                                                    <option>City Name</option>
+                                                                    <option>City Other</option>
+                                                                </select>
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                                                <div class="field-label">Zip / Postal Code <span class="required">*</span></div>
+                                                                <input type="text" required="" placeholder="Zip Code" value="" name="name">
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">Donate Now</button></div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <hr>
+
+                                                    <!--Form Portlet-->
+                                                    <div class="form-portlet">
+                                                        <h3>Online Payment Information</h3>
+
+                                                        <div class="payment-option-logo"><img alt="" src="{{  asset('front/img/resources/payment-logos.png') }}" class="img-responsive"></div>
+                                                        <br>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal: donate now Ends -->
+                        </div>
+                    </div>
+                </div>
+            </header> <!-- /.header -->
+        {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block footer %}
+
+        <footer class="footer sec-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-widget about-widget">
+                            <a href="#">
+                                <img src="{{ asset('front/img/resources/footer-logo.png') }}" alt="Awesome Image"/>
+                            </a>
+                            <p>Lorem ipsum dolor sit amet, eu me evert laboramus, iudico </p>
+                            <ul class="contact">
+                                <li><i class="fa fa-map-marker"></i> <span>60 Grant Ave. Carteret NJ 0708</span></li>
+                                <li><i class="fa fa-phone"></i> <span>(880) 1723801729</span></li>
+                                <li><i class="fa fa-envelope-o"></i> <span>example@gmail.com</span></li>
+                            </ul>
+                            <ul class="social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <div class="footer-widget quick-links">
+                            <h3 class="title">Pages</h3>
+                            <ul>
+                                <!--<li><a href="about.html">About Us</a></li>
+                                <li><a href="causes-grid.html">Causes</a></li>
+                                <li><a href="events-grid.html">Events</a></li>
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="blog-style-two.html">Archives</a></li>
+                                <li><a href="blog-style-one.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 latest-post col-sm-6">
+                        <div class="footer-widget latest-post">
+                            <h3 class="title">Latest News</h3>
+                            <ul>
+                                <li>
+                                    <span class="border"></span>
+                                    <div class="content">
+                               <         <a href="#">If you need a crown or lorem an implant you will pay it </a>
+                                        <span>July 2, 2014</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="border"></span>
+                                    <div class="content">
+                                        <a href="#">If you need a crown or lorem an implant you will pay it </a>
+                                        <span>July 2, 2014</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="border"></span>
+                                    <div class="content">
+                                        <a href="#">If you need a crown or lorem an implant you will pay it </a>
+                                        <span>July 2, 2014</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="footer-widget contact-widget">
+                            <h3 class="title">Contact Form</h3>
+                            <form action="http://hasan.themexlab.com/new/lillah-fund-html/inc/sendemail.php" class="contact-form" id="footer-cf">
+                                <input type="text" name="name"  placeholder="Full Name">
+                                <input type="text" name="email" placeholder="Email Address" >
+                                <textarea name="message" placeholder="Your Message"></textarea>
+                                <button type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    {% endblock %}
+        {% block javascripts %}
+
+            <script src="{{  asset('front/js/jquery-1.11.1.min.js') }}"></script>
+            <!-- bootstrap -->
+            <script src="{{  asset('front/js/bootstrap.min.js') }}"></script>
+            <!-- bx slider -->
+            <script src="{{  asset('front/js/jquery.bxslider.min.js') }}"></script>
+            <!-- owl carousel -->
+            <script src="{{  asset('front/js/owl.carousel.min.js') }}"></script>
+            <!-- validate -->
+            <script src="{{  asset('front/js/jquery-parallax.js') }}"></script>
+            <!-- validate -->
+            <script src="{{  asset('front/js/validate.js') }}"></script>
+            <!-- mixit up -->
+            <script src="{{  asset('front/js/jquery.mixitup.min.js') }}"></script>
+            <!-- fancybox -->
+            <script src="{{  asset('front/js/jquery.fancybox.pack.js') }}"></script>
+            <!-- easing -->
+            <script src="{{  asset('front/js/jquery.easing.min.js') }}"></script>
+            <!-- circle progress -->
+            <script src="{{  asset('front/js/circle-progress.js') }}"></script>
+            <!-- appear js -->
+            <script src="{{  asset('front/js/jquery.appear.js') }}"></script>
+            <!-- count to -->
+            <script src="{{  asset('front/js/jquery.countTo.js') }}"></script>
+
+            <!-- isotope script -->
+            <script src="{{  asset('front/js/isotope.pkgd.min.js') }}"></script>
+            <!-- jQuery ui js -->
+            <script src="{{  asset('front/js/jquery-ui-1.11.4/jquery-ui.j') }}s"></script>
+
+            <!-- revolution scripts -->
+
+            <script src="{{  asset('front/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
+            <script src="{{  asset('front/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.migration.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+            <script type="text/javascript" src="{{  asset('front/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+
+
+            <!-- thm custom script -->
+            <script src="{{  asset('front/js/custom.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

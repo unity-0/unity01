@@ -1,0 +1,9 @@
+temp_homepage:
+    path:     /p
+    defaults: { _controller: TempBundle:Default:index }
+temp_page1:
+    path:     /page1
+    defaults: { _controller: TempBundle:Default:page }
+temp_dash1:
+    path:     /dash1
+    defaults: { _controller: TempBundle:Default:dash }
