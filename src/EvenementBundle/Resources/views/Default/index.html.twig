@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h1>Ajouter Don</h1>
+    {{ form_start(form) }}
+    {{ form_label(form.codeSecurite,'codeSecurite', {'label_attr':{'class' : 'codeSecurite'}}) }}
+    {{ form_widget(form.codeSecurite,{'attr': {'class' : 'codeSecurite form-control'}}) }}
+    {{ form_end(form) }}
+{% endblock %}
