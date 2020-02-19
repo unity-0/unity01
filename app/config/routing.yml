@@ -1,3 +1,11 @@
+mailing:
+    resource: "@MailingBundle/Resources/config/routing.yml"
+    prefix:   /
+
+camp:
+    resource: "@CampBundle/Resources/config/routing.yml"
+    prefix:   /
+
 temp:
     resource: "@TempBundle/Resources/config/routing.yml"
     prefix:   /

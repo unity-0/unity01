@@ -1,0 +1,174 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+
+    <section class="inner-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 sec-title colored text-center">
+                    <h2>Blog</h2>
+                    <ul class="breadcumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-right"></i></li>
+                        <li><span>Blog</span></li>
+                    </ul>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="blog-home sec-padding blog-page">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-8 col-sm-12 pull-left pull-sm-none">
+                    {% for blog in blog %}
+
+                    <div class="single-blog-post">
+                        <div class="img-box">
+                            <img src="{{ asset('uploads/images/'~blog.image) }}" height="300" width="1000">
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <ul>
+                                            <li><a href="blog-details.html"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <div class="date-box">
+                                <div class="inner">
+                                    <div class="date">
+                                        <b>24</b>
+                                        apr
+                                    </div>
+                                    <div class="comment">
+                                        <i class="flaticon-interface-1"></i> 8
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <a href="blog-details.html"><h3>{{ blog.titre }}</h3></a>
+                                <p>{{ blog.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+
+                    <!--Pagination-->
+                 {#   <div class="pager-outer clearfix mt_30 mb_0">
+                        <ul class="pagination mb_0">
+                            <li><a href="#">Prev</a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">-</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+                   #}
+
+
+                        {#
+                         <div class="single-sidebar-widget category">
+                             <h3 class="title">Catagories</h3>
+                             <ul>
+                                 <li><a href="#">Child</a></li>
+                                 <li><a href="#">Charity</a></li>
+                                 <li><a href="#">Sponsorship</a></li>
+                                 <li><a href="#">Volunteers</a></li>
+                                 <li><a href="#">Feed</a></li>
+                             </ul>
+                         </div>
+                         <div class="single-sidebar-widget popular-post">
+                             <h3 class="title">Popular Posts</h3>
+                             <ul>
+                                 <li>
+                                     <div class="img-box">
+                                         <div class="inner-box">
+                                             <img src="img/blog-page/s1.jpg" alt="">
+                                         </div>
+                                     </div>
+                                     <div class="content-box">
+                                         <a href="#"><h4>Lorem Ipsum is simply dumm textand somthing more here</h4></a>
+                                         <span>17 jun, 2015</span>
+                                     </div>
+                                 </li>
+                                 <li>
+                                     <div class="img-box">
+                                         <div class="inner-box">
+                                             <img src="img/blog-page/s2.jpg" alt="">
+                                         </div>
+                                     </div>
+                                     <div class="content-box">
+                                         <a href="#"><h4>Lorem Ipsum is simply dumm textand somthing more here</h4></a>
+                                         <span>17 jun, 2015</span>
+                                     </div>
+                                 </li>
+                                 <li>
+                                     <div class="img-box">
+                                         <div class="inner-box">
+                                             <img src="img/blog-page/s3.jpg" alt="">
+                                         </div>
+                                     </div>
+                                     <div class="content-box">
+                                         <a href="#"><h4>Lorem Ipsum is simply dumm textand somthing more here</h4></a>
+                                         <span>17 jun, 2015</span>
+                                     </div>
+                                 </li>
+                                 <li>
+                                     <div class="img-box">
+                                         <div class="inner-box">
+                                             <img src="img/blog-page/s4.jpg" alt="">
+                                         </div>
+                                     </div>
+                                     <div class="content-box">
+                                         <a href="#"><h4>Lorem Ipsum is simply dumm textand somthing more here</h4></a>
+                                         <span>17 jun, 2015</span>
+                                     </div>
+                                 </li>
+                             </ul>
+                         </div>
+
+                         <div class="single-sidebar-widget archive">
+                             <h3 class="title">Archive</h3>
+                             <ul>
+                                 <li><a href="#">October 2015</a></li>
+                                 <li><a href="#">November 2015</a></li>
+                                 <li><a href="#">December 2015</a></li>
+                                 <li><a href="#">January 2016</a></li>
+                                 <li><a href="#">February 2016</a></li>
+                             </ul>
+                         </div>
+                        #}
+                </div>
+                    <div class="col-md-4 col-sm-12 sidebar-inner pull-right pull-sm-none">
+                        <div class="side-bar-widget">
+                            <div class="single-sidebar-widget search">
+                                <form action="#">
+                                    <input type="text" placeholder="Search">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+
+                                </form>
+                </div>
+
+            </div>
+        </div>
+
+
+                </div>
+
+        </div>
+    </section>
+
+{% endblock %}

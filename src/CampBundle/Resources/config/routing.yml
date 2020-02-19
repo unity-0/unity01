@@ -1,0 +1,26 @@
+camp_homepage:
+    path:     /
+    defaults: { _controller: CampBundle:Default:index }
+
+camp_ajout_refuge:
+    path:     /ajoutref
+    defaults: { _controller: CampBundle:Refuge:ajoutRefuge }
+camp_affiche_refuge:
+    path:     /afficheref
+    defaults: { _controller: CampBundle:Refuge:afficheRefuge }
+camp_update_refuge:
+    path:     /updateref/{id}
+    defaults: { _controller: CampBundle:Refuge:updateRefuge }
+camp_supprimer_refuge:
+    path:     /suppref/{id}
+    defaults: { _controller: CampBundle:Refuge:supprimerRefuge }
+camp_affiche_refuge_front:
+    path:     /afficheref-front
+    defaults: { _controller: CampBundle:Refuge:afficheRefugeFront }
+
+camp_ajout_blog:
+    path:     /ajoutblog
+    defaults: { _controller: CampBundle:Blog:ajoutBlog }
+camp_affiche_blog:
+    path:     /afficheblog/{id}
+    defaults: { _controller: CampBundle:Blog:afficheBlog }

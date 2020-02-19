@@ -1,0 +1,6 @@
+mailing_homepage:
+    path:     /
+    defaults: { _controller: MailingBundle:Default:index }
+mailing_send_mail:
+        path:     /sendmail
+        defaults: { _controller: MailingBundle:Mail:sendMail }

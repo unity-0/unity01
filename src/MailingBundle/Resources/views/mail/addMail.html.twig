@@ -1,0 +1,90 @@
+{% extends 'base2.html.twig' %}
+
+{% block content %}
+
+{#
+{% set flashbag_notices = app.session.flashbag.get('notice') %}
+{% if flashbag_notices is not empty %}
+<ul class ="msg">
+    {% for notice in flashbag_notices %}
+    <li>{{ notice }}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+
+
+#}
+
+<section id="main-content">
+    <section class="wrapper">
+        <!-- page start-->
+        <div class="row mt">
+
+                <div class="col-sm-9">
+                    <section class="panel">
+                        <header class="panel-heading wht-bg">
+                            <h4 class="gen-case">
+                                Compose Mail
+                                
+                            </h4>
+                        </header>
+                        <div class="panel-body">
+
+                            <div class="compose-mail">
+                                    <div class="form-group">
+                                        <label for="to" class="">To:</label>
+                                        {{ form_start(form) }}
+                                        {{ form_widget(form.email,{'attr': {'class' : 'email form-control'}}) }}
+                                        <div id="des_err">
+                                            {{ form_errors(form.email) }}
+                                        </div>
+                                        {#    <div class="compose-options">
+                                                <a onclick="$(this).hide(); $('#cc').parent().removeClass('hidden'); $('#cc').focus();" href="javascript:;">Cc</a>
+                                                <a onclick="$(this).hide(); $('#bcc').parent().removeClass('hidden'); $('#bcc').focus();" href="javascript:;">Bcc</a>
+                                            </div>
+                                            #}
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="subject" class="">Subject:</label>
+                                        {{ form_widget(form.sujet,{'attr': {'class' : 'sujet form-control'}}) }}
+                                        <div id="des_err">
+                                            {{ form_errors(form.sujet) }}
+                                        </div>                                    </div>
+
+                                    <div class="compose-editor">
+                                       <textarea rows="9" {{ form_widget(form.objet,{'attr': {'class' : 'wysihtml5 form-control'}}) }} </textarea>
+                                        <div id="des_err">
+                                            {{ form_errors(form.objet) }}
+                                        </div>
+                                    </div>
+                                    <div class="compose-btn">
+                                        {{ form_row(form.send,{'attr': {'class' : 'btn btn-theme btn-sm'}}) }}
+
+                                    </div>
+                                {% set flashbag_notices = app.session.flashbag.get('notice') %}
+                                {% if flashbag_notices is not empty %}
+                                    <ul class ="msg">
+                                        {% for notice in flashbag_notices %}
+                                            <li>{{ notice }}</li>
+                                        {% endfor %}
+                                    </ul>
+
+                                {% endif %}
+
+                                {{ form_end(form) }}
+
+
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </section>
+    <!-- /wrapper -->
+</section>
+
+                {% endblock %}
