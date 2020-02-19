@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+   <h1>Evenement</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ evenement.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ evenement.nom }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ evenement.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Heure</th>
+                <td>{% if evenement.heure %}{{ evenement.heure|date('H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ evenement.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('evenement_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{#<section class="inner-header">
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12 sec-title colored text-center">
+               <h2>Events</h2>
+               <ul class="breadcumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li><i class="fa fa-angle-right"></i></li>
+                   <li><span>Events Grid</span></li>
+               </ul>
+               <span class="decor"><span class="inner"></span></span>
+           </div>
+       </div>
+   </div>
+</section>
+
+<section class="event-feature sec-padding bg-color-fa pb_60">
+   <div class="container">
+       <div class="row events-grid">
+           {% for liste in liste %}
+
+               <div class="col-sm-6 col-md-4">
+                   <div class="event-post">
+                       <div class="thumb">
+                           <img src="{{ asset('annonce.jpg') }}" alt="">
+                           <div class="overlay">
+
+                           </div>
+                       </div>
+                       <div class="caption">
+                           <h3 class="title"><a href="#">Nom {{ liste.nom }}</a></h3>
+                           <p class="event-location">Description {{ liste.Description }}</p>
+                           <a href="{{ path('comA', {"id":liste.id }) }}">Commentaire</a>
+                       </div>
+                   </div>
+               </div>
+           {% endfor %}#}
+{% endblock %}

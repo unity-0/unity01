@@ -1,0 +1,9 @@
+evenement_homepage:
+    path:     /
+    defaults: { _controller: EvenementBundle:Default:index }
+aad:
+    path:     /add
+    defaults: { _controller: EvenementBundle:Don:add }
+afficher:
+    path:     /afficher/{nom}
+    defaults: { _controller: EvenementBundle:Don:afficher }
