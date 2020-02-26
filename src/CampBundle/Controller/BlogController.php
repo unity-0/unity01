@@ -35,12 +35,4 @@ class BlogController extends Controller
 
         return $this->render('@Camp/blog/addBlog.html.twig', array ('form' => $form->createView()));
 
-    }
-
-    public function afficheBlogAction($id) {
-        $em = $this->getDoctrine()->getManager();
-        $blog=$em->getRepository('CampBundle:blog')->findBy( array('refuge' => $id));
-
-        return $this->render('@Camp/blog/afficheBlog.html.twig', array('blog' => $blog));
-    }
 }
