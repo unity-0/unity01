@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <h1>Ajouter Don</h1>
+
+{{ form_start(form) }}
+    {{ form_label(form.codeSecurite,'codeSecurite', {'label_attr':{'class' : 'codeSecurite'}}) }}
+    {{ form_widget(form.codeSecurite,{'attr': {'class' : 'codeSecurite form-required'}}) }}
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th> {{ form_label(form.montant, 'montant', {'field-label':{'class' : 'montant'}}) }}
+    {{ form_widget(form.montant,{'attr': {'class' : 'montant form-required'}}) }}
+<div> {{ form_label(form.cardNum,'Numero de carte', {'label_attr':{'class' : 'cardNum'}}) }}
+    {{ form_widget(form.cardNum,{'attr': {'class' : 'cardNum form-required'}}) }}
+    {{ form_label(form.nom,'nom', {'label_attr':{'class' : 'nom'}}) }}
+    {{ form_widget(form.nom,{'attr': {'class' : 'nom form-required'}}) }}
+</div>
+
+<div> {{ form_label(form.email,'email', {'label_attr':{'class' : 'email'}}) }}
+    {{ form_widget(form.email,{'attr': {'class' : 'email form-required'}}) }}
+    {{ form_label(form.telephone,'telephone', {'label_attr':{'class' : 'telephone'}}) }}
+    {{ form_widget(form.telephone,{'attr': {'class' : 'telephone form-required'}}) }}
+</div>
+{{ form_end(form) }}
+
+
+
+  {#  <nav class="mainmenu-area stricky">
+        <div class="container">
+            <div class="navigation pull-left">
+                <div class="nav-header">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#">Home</a>
+                            <ul class="submenu">
+                                <li><a href="index-1.html">Home One</a></li>
+                                <li><a href="index-2.html">Home Two</a></li>
+                                <li><a href="index-3.html">Home Three</a></li>
+                                <li><a href="index-4.html">Home Four</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+                            <a href="#">Causes</a>
+                            <ul class="submenu">
+                                <li><a href="causes-grid.html">Causes Grid</a></li>
+                                <li><a href="causes-list.html">Causes List</a></li>
+                                <li><a href="causes-single.html">Single Cause</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Events</a>
+                            <ul class="submenu">
+                                <li><a href="events-grid.html">Events Grid</a></li>
+                                <li><a href="events-list.html">Events List</a></li>
+                                <li><a href="events-single.html">Event Single</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Volunteer</a>
+                            <ul class="submenu">
+                                <li><a href="volunteer-style-one.html">Volunteer Style One</a></li>
+                                <li><a href="volunteer-style-two.html">Volunteer Style Two</a></li>
+                                <li><a href="volunteer-profile.html">Volunteer Profile</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Gallery</a>
+                            <ul class="submenu">
+                                <li><a href="gallery-style-one.html">Gallery Style One</a></li>
+                                <li><a href="gallery-style-two.html">Gallery Style Two</a></li>
+                                <li><a href="gallery-style-three.html">Gallery Style Three</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Pages</a>
+                            <ul class="submenu">
+                                <li><a href="donations.html">Donation</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Blog</a>
+                            <ul class="submenu">
+                                <li><a href="blog-style-one.html">Blog Style One</a></li>
+                                <li><a href="blog-style-two.html">Blog Style Two</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-footer">
+                    <button><i class="fa fa-bars"></i></button>
+                </div>
+            </div>
+            <div class="search-box pull-right">
+                <form action="#">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav> <!-- /.mainmenu-area -->
+
+
+    <section class="inner-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 sec-title colored text-center">
+                    <h2>Donation</h2>
+                    <ul class="breadcumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-right"></i></li>
+                        <li><span>Donation</span></li>
+                    </ul>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-padding donation-section">
+        <div class="container">
+            <h2 class="text-thm">Make a Donation</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate adipisci neque eius quod, fugiat saepe unde. In quibusdam, cum sit blanditiis explicabo rerum. Ipsa fugit, aspernatur quo at velit ex.</p>
+            <hr>
+            <div class="donation-form-outer">
+                <form action="{{ 'add' }}" method="post">
+
+                    <!--Form Portlet-->
+                    <div class="form-portlet">
+                        <h3>Donation Amount</h3>
+
+                        <div class="row clearfix">
+                            <div class="form-group col-lg-7 col-md-12 col-xs-12 clearfix">
+
+
+                            </div>
+
+                            <div class="form-group col-lg-5 col-md-8 col-xs-12 padd-top-20">
+
+                                <input type="text" placeholder="Other Amount" value="" name="form.montant">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!--Form Portlet-->
+                    <div class="form-portlet">
+                        <h3>Billing Information</h3>
+
+                        <div class="row clearfix">
+
+                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                <div class="field-label">Card Number <span class="required">*</span></div>
+                                <input type="text" required="" placeholder="Card Number" value="" name="form.cardNum">
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                <div class="field-label">Security Code (CVC) <span class="required">*</span></div>
+                                <input type="text" required="" placeholder="Security Code" value="" name="form.codeSecurite">
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                <div class="field-label">Name <span class="required">*</span></div>
+                                <input type="text" required="" placeholder="First Name" value="" name="form.nom">
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                <div class="field-label">Email <span class="required">*</span></div>
+                                <input type="email" required="" placeholder="Email" value="" name="form.email">
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                <div class="field-label">Phone <span class="required">*</span></div>
+                                <input type="text" required="" placeholder="Phone" value="" name="form.telephone">
+                            </div>
+
+
+
+
+                            <hr>
+
+                            <div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">Submit Now</button></div>
+
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!--Form Portlet-->
+                    <div class="form-portlet">
+                        <h3>Online Payment Information</h3>
+
+                        <div class="payment-option-logo"><img alt="" src="img/resources/payment-logos.png" class="img-responsive"></div>
+                        <br>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>#}
+
+{% endblock %}

@@ -20,6 +20,19 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new UserBundle\UserBundle(),
             new mytemplat\TempBundle\TempBundle(),
+            new CampBundle\CampBundle(),
+            new MailingBundle\MailingBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new FOS\CKEditorBundle\FOSCKEditorBundle(),
+            new AnnonceBundle\AnnonceBundle(),
+            new AnonceBundle\AnonceBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new ActionBundle\ActionBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new EvenementBundle\EvenementBundle(),
+            new AssociationBundle\AssociationBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

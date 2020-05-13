@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <section id="main-content">
+
+        <section class="wrapper">
+            <h3><i class="fa fa-angle-right"></i> Liste des commentaires </h3>
+
+
+            <div class="row mb">
+                <!-- page start-->
+                <div class="content-panel">
+                    <div class="adv-table">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+
+                            <thead>
+
+                            <th class="column4">Contenu</th>
+
+                            </thead>
+
+                            <tbody>
+
+
+                            {% for c in annonce  %}
+                            <tr >
+
+                                <td> {{ c.contenu  }} </td>
+
+                                <td>
+                                    <div class="compose-btn">
+                                        <ul>
+                                            <li>
+                                                <button class="btn btn-theme02"><i class="fa fa-angle-right"></i> <a href="{{ path('suppcom', {'id':c.id }) }}">Supprimer</a></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="compose-btn">
+                                        <ul>
+                                            <li>
+                                                <button class="btn btn-theme02"><i class="fa fa-angle-right"></i> <a href="{{ path('updateCom', {"id":c.id }) }}">Modifier</a></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </td>
+                                {% endfor %}
+                            </tr>
+                            </tbody>
+
+                        </table>
+                        </table>
+
+
+        </section>
+    </section>
+
+
+
+
+
+
+
+
+{% endblock %}

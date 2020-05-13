@@ -1,0 +1,68 @@
+{% extends 'base2.html.twig' %}
+
+{% block content %}
+
+        <h3><i class="fa fa-angle-right"></i> Ajouter Refuge</h3>
+        <!-- BASIC FORM VALIDATION -->
+        <div class="row mt">
+            <div class="col-lg-12">
+                <h4><i class="fa fa-angle-right"></i> AJOUT</h4>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="form-group">
+
+                            {{ form_start(form) }}
+
+                            {{ form_label(form.nom,'Nom', {'label_attr':{'class' : 'nomlab'}}) }}
+
+
+                            {{ form_widget(form.nom,{'attr': {'class' : 'nom form-control'}}) }}
+                            <div id="des_err">
+                                {{ form_errors(form.nom) }}
+                            </div>
+
+                            {{ form_label(form.adresse,'Adresse', {'label_attr':{'class' : 'adresselab'}}) }}
+                            {{ form_widget(form.adresse,{'attr': {'class' : 'adresse form-control'}}) }}
+                            <div id="des_err">
+                                {{ form_errors(form.adresse) }}
+
+                    </div>
+                            {{ form_label(form.tel,'Tel', {'label_attr':{'class' : 'tellab'}}) }}
+
+                            {{ form_widget(form.tel,{'attr': {'class' : 'tel form-control'}}) }}
+                            <div id="des_err">
+                                {{ form_errors(form.tel) }}
+                            </div>
+
+                {{ form_label(form.nbtot,'Maximaum d"habitat', {'label_attr':{'class' : 'tellab'}}) }}
+
+                {{ form_widget(form.nbtot,{'attr': {'class' : 'tel form-control'}}) }}
+                <div id="des_err">
+                    {{ form_errors(form.nbtot) }}
+                </div>
+                {{ form_label(form.pour,'pourcentage', {'label_attr':{'class' : 'tellab'}}) }}
+
+                {{ form_widget(form.pour,{'attr': {'class' : 'pourcentage form-control'}}) }}
+                <div id="des_err">
+                    {{ form_errors(form.pour) }}
+                </div>
+
+                <div>
+                    {{ form_row(form.image) }}
+                </div>
+
+                <br>
+                {{ form_row(form.Ajouter,{'attr': {'class' : 'btn btn-primary'}}) }}
+
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

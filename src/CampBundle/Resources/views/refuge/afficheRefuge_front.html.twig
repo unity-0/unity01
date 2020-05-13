@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>LISTE DES REFUGES</h2>
+                <ul class="breadcumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                    <li><span>Liste des refuges</span></li>
+                </ul>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="recent-causes sec-padding pb_60">
+    <div class="container">
+
+        <a href="{{ path('camp_affiche_refuge_front_populaire')}}" class="thm-btn inverse">Popular</a>
+<hr>
+
+        <div class="row causes-style piechart-style">
+            {% for refuge in refuge %}
+
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="causes sm-col5-center mb_30">
+                    <div class="thumb">
+                        <img src="{{ asset('uploads/images/'~refuge.image) }}" width="375" height="250">
+                        <div class="donate-piechart">
+                            <div class="piechart-block">
+                                <div class="piechart style-one"  data-fg-color="rgba(10,164,197,1)" data-value=".{{ refuge.pour }}">
+                                    <span>{{ refuge.pour }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="causes-details clearfix">
+                        <h4 class="title"><a href="#">{{ refuge.nom }}</a></h4>
+                        <ul class="about-causes list-inline clearfix">
+                            <li class="causes-raised">Tel : {{ refuge.tel }}    / </li>
+                            <li class="causes-goal"> Adresse :   {{ refuge.adresse }}</li>
+                        </ul>
+                        <div>
+                            <a onclick="window.location.href='{{ path('camp_affiche_blog',{'id':refuge.id}) }}'" class="thm-btn btn-xs"><i class="fa fa-angle-double-right text-white"></i> Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+            <div class="col-sm-12">
+                <!--Pagination-->
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock  %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Evenement edit</h1>
+
+    {{ form_start(edit_form) }}
+    {{ form_label(edit_form.nom,'Titre', {'label_attr':{'class' : 'nom'}}) }}
+    {{ form_widget(edit_form.nom,{'attr': {'class' : 'nom form-control'}}) }}
+    {{ form_label(edit_form.lieu,'Lieu', {'label_attr':{'class' : 'lieu'}}) }}
+    {{ form_widget(edit_form.lieu,{'attr': {'class' : 'type form-control'}}) }}
+    {{ form_label(edit_form.date,'date', {'label_attr':{'class' : 'date'}}) }}
+    {{ form_widget(edit_form.date) }}
+    {{ form_errors(edit_form.date) }}
+
+    {{ form_label(edit_form.heure,'heure', {'label_attr':{'class' : 'heure'}}) }}
+    {{ form_widget(edit_form.heure) }}
+    <div id="prix_err">
+        {{ form_errors(edit_form.heure) }}
+    </div>
+
+    {{ form_label(edit_form.description,'Description', {'label_attr':{'class' : 'description'}}) }}
+    {{ form_widget(edit_form.description, {'attr': {'class' : 'type form-control'}}) }}
+    <div id="date_d_err">
+        {{ form_errors(edit_form.description) }}
+    </div>
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('evenement_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

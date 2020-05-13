@@ -1,0 +1,40 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %} Liste des action {% endblock %}
+
+{% block content %}
+
+
+    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <table border="4" style ="margin-left: 300px; width: content-box">
+
+
+        <tr>
+            <td>id</td>
+            <td>Titre</td>
+            <td>description</td>
+            <td>date</td>
+            <td>heure</td>
+            <td>photo</td>
+            <td>delete</td>
+            <td>modifier</td>
+        </tr>
+        {% for action in actions %}
+            <tr>
+                <td>{{ action.id }}</td>
+                <td>{{ action.titre }}</td>
+                <td>{{ action.description }}</td>
+                <td>{{ action.date|date }}</td>
+                <td></td>
+                <td><img src="{{ asset('uploads/photos/' ~ action.photo) }}"  style ="width:50px; height:50px"> </td>
+                <td><a href="{{path("supp", {'id':action.id}) }}">supprimer</a> </td>
+                <td><a href="{{path("update", {'id':action.id}) }}">Modifier</a> </td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+{% endblock  %}
+{% block footer  %}
+{% endblock  %}

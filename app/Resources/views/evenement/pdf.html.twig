@@ -1,0 +1,29 @@
+<h3>Evenement</h3>
+<div class="event border-1px">
+    <div class="row">
+        <div class="col-lg-5 col-md-12">
+            <div class="event-thumb">
+                <div class="thumb">
+                    <img class="full-width" src="img/event/e1.jpg" alt="">
+                </div>
+                <ul class="event-date">
+                    <li class="date">{{evenement.date|date}}</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-12">
+            <div class="event-content">
+                <h3 class="event-title"><a href="#">{{ evenement.nom }}</a></h3>
+                <ul class="event-held list-inline font-13">
+                    <li><i class="fa fa-clock-o"></i> {{evenement.date|date}}</li>
+                    <li> <i class="fa fa-map-marker"></i> {{evenement.lieu}}</li>
+                </ul>
+                <p class="mb_20">{{ evenement.description }}</p>
+                <a class="thm-btn btn-rt btn-xs" href="#">&ensp; join Us &ensp;</a>
+                <a class="thm-btn inverse btn-xs" href="{{ asset('detail')}}">Detail</a>
+            </div>
+        </div>
+    </div>
+
+</div>

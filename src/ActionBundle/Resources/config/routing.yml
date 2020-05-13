@@ -1,0 +1,31 @@
+action_homepage:
+    path:     /index
+    defaults: { _controller: ActionBundle:Default:index }
+add_action:
+    path:     /addAction
+    defaults: { _controller: ActionBundle:Action:add }
+list:
+        path:     /list
+        defaults: { _controller: ActionBundle:Action:list }
+supp:
+        path:     /delete/{id}
+        defaults: { _controller: ActionBundle:Action:supp }
+
+update:
+        path:     /update/{id}
+        defaults: { _controller: ActionBundle:Action:update }
+listaction:
+    path:     /listaction
+    defaults: { _controller: ActionBundle:Action:listaction }
+detailed:
+    path:     /detailed/{id}
+    defaults: { _controller:  ActionBundle:Action:showdetailed }
+search:
+    path:     /search
+    defaults: { _controller: ActionBundle:Action:search }
+add_comment:
+    path:     /addcomment
+    defaults: { _controller: ActionBundle:Action:addComment }
+delete_comment:
+    path:     /deletecomment/{id}
+    defaults: { _controller: ActionBundle:Action:deleteComment }

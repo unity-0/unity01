@@ -4,15 +4,26 @@ imports:
     - { resource: services.yml }
     - { resource: "@UserBundle/Resources/config/services.yml" }
     - { resource: "@TempBundle/Resources/config/services.yml" }
+    - { resource: "@CampBundle/Resources/config/services.yml" }
+    - { resource: "@MailingBundle/Resources/config/services.yml" }
+    - { resource: "@AnnonceBundle/Resources/config/services.yml" }
+    - { resource: "@AnonceBundle/Resources/config/services.yml" }
+    - { resource: "@ActionBundle/Resources/config/services.yml" }
+    - { resource: "@EvenementBundle/Resources/config/services.yml" }
+    - { resource: "@AssociationBundle/Resources/config/services.yml" }
+
+
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
-
+    image_directory: '%kernel.project_dir%/web/uploads/images'
 framework:
     #esi: ~
     translator: { fallbacks: ['%locale%'] }
+    templating:
+        engines: ['twig']
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -37,6 +48,10 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+
 
 # Doctrine Configuration
 doctrine:
@@ -66,6 +81,12 @@ swiftmailer:
     host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
+    stream_options:
+        ssl:
+            allow_self_signed: true
+            verify_peer: false
+            verify_peer_name: false
+
     spool: { type: memory }
 
 sensio_framework_extra:
@@ -80,5 +101,55 @@ fos_user:
     service:
         mailer: fos_user.mailer.twig_swift
     from_email:
-        address: "mohamedhamza.ladhibi@esprit.tn"
-        sender_name: "mohamed hamza ladhibi"
+        address:  noreplay@monsiteweb.com
+        sender_name: test
+vich_uploader:
+    db_driver: orm
+    mappings:
+        annonce_photo:
+            uri_prefix:         /uploads/Annonce
+            upload_destination: %kernel.root_dir%/../web/uploads/Annonce
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
+nomaya_social:
+    buttons:
+        facebook:
+            url:            null
+            locale:         "fr_FR"
+            send:           false
+            width:          300
+            showFaces:      false
+            layout:         "button_count"
+        twitter:
+            url:            null
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            "L'Equipe cartedevisitevirtuelle.fr"
+            tag:            "ttot"
+        googleplus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "fr_FR"
+            counter:        "right"
+        pinterest:
+            url:            null
+    links:
+        facebook:           "http://www.facebook.com/yann.chauvel"
+        googleplus:         "https://plus.google.com/105931415830389032796"
+    theme:                  'default' # optional
+
+fos_message:
+    db_driver: orm
+    thread_class: AssociationBundle\Entity\Thread
+    message_class: AssociationBundle\Entity\Message
+
+

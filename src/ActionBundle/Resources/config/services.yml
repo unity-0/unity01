@@ -1,0 +1,6 @@
+services:
+#    action.example:
+#        class: ActionBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+parameters:
+  photos_action: '%kernel.project_dir%/web/uploads/photos'

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block title %} Liste des action {% endblock %}
+
+{% block content %}
+
+    <div class="col-md-4 col-sm-12 sidebar-inner pull-right pull-sm-none">
+        <div class="side-bar-widget">
+            <div class="single-sidebar-widget search">
+                <form method="POST">
+                    <input type="text" placeholder="Search" name="titre">
+                    <button type="submit" value="search"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+
+
+    <section class="blog-home sec-padding blog-page">
+        <div class="container">
+
+            <div class="row">
+                {% for action in actions %}
+                <div class="col-md-4 col-sm-4 pull-left pull-sm-none">
+                    <div class="single-blog-post">
+                        <div class="img-box">
+                            <img src="{{ asset('uploads/photos/' ~ action.photo) }}" alt="">
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <ul>
+                                            <li><a href="{{path('detailed', {'id': action.id}) }}"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box">
+                            <div class="date-box">
+                                <div class="inner">
+                                    <div class="date">
+                                        {{ action.date|date }}
+                                    </div>
+                                    <div class="comment">
+                                        <i class="flaticon-interface-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <a href="{{ asset('details.html.twig')}}"><h3>{{ action.titre }}</h3></a>
+                                <p>{{ action.description }} </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        </div>
+    </section>
+
+{% endblock  %}

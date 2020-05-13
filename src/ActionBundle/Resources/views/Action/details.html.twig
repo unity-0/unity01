@@ -1,0 +1,106 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>Action</h2>
+                <ul class="breadcumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                    <li><span>Action</span></li>
+                </ul>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog-home sec-padding blog-page blog-details">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-sm-12 pull-left pull-sm-none">
+                <div class="single-blog-post">
+                    <p class="">
+
+                        <a href="{{ path('list') }}">Action</a>
+                    </p>
+                    <div class="img-box">
+                        <img src="{{ asset('uploads/photos/' ~ photo) }}" height="250" width="700">
+                        <div>{{ socialButtons() }}</div>
+                    </div>
+                    <div class="content-box">
+                        <div class="date-box">
+                            <div class="inner">
+                                <div class="date">
+                                    <b></b>
+                                    {{ date|date }}
+                                </div>
+                                <div class="comment">
+                                    <i class="flaticon-interface-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="#"><h3> alt="{{ title }}" </h3></a>
+                            <p> {{ description }}</p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="comment-form contact-content">
+                    <h2>Leave a Comment</h2>
+
+                    <form action="{{path('add_comment') }}" method="Post" id="comment" class="contact-form row" id="contact-page-contact-form">
+
+                        <div class="col-md-6">
+                            <input name="Comment" placeholder="Comment" cols="30" rows="10">
+                        </div>
+                        <div class="col-md-12">
+                            <button class="thm-btn" type="submit">submit</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <!-- Single Comment -->
+                {% for comment in actions.comments %}
+                <div class="media mb-4">
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    <div class="media-body">
+                        <h5 class="mt-0">{{ comment.getUser().getUsername() }}</h5>
+                        <p>{{ comment.getContent() }}</p>
+
+                        <a href="{{path('delete_comment', {'id': comment.id}) }}">Delete</a>
+                        {% else %}
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+<br><br><br><br><br><br>
+
+                <!-- Sidebar Widgets Column -->
+                <div class="col-md-4">
+
+                    <!-- Search Widget -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+{% endblock  %}

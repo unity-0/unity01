@@ -1,0 +1,124 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+
+
+    <section class="home-appointment-form volunteer-profile">
+        <div class="container">
+            <hr>
+            {{ form_start(form) }}
+            <div class="heading">
+                <h3>Completez votre profil maintenant ! </h3>
+            </div>
+            <div class="form-grp clearfix">
+                <form  class="clearfix contact-form" id="appointment-form">
+                    <div class="single-form">
+
+                        <input placeholder="Nom & Prenom" {{ form_widget(form.prenom,{'attr': {'class' : 'prenom single-form '}}) }}
+
+                    </div>
+
+                    <div class="single-form">
+
+                        <input placeholder="Age" {{ form_widget(form.age,{'attr': {'class' : 'age single-form '}}) }}
+
+                    </div>
+
+                    <div class="single-form">
+                        <input placeholder="Tel" {{ form_widget(form.tel,{'attr': {'class' : 'tel single-form '}}) }}
+                    </div>
+                    <div class="single-form">
+                        <input placeholder="Tel" {{ form_widget(form.langue,{'attr': {'class' : 'tel single-form '}}) }}
+                    </div>
+                    <hr>
+                    <div class="comment-form contact-content">
+                        <h4>Ajouter votre competence  (pour offre d'emploi)</h4>
+
+                        <div class="single-form">
+                            <input   {{ form_widget(form.competence,{'attr': {'style' : 'width:950px'}}) }}
+                        </div>
+                    </div>
+
+
+
+
+
+                    {#
+
+                      <div class="single-form">
+                          <div class="select-input-wrapper">
+                              <select class="select-input" name="category">
+                                  <option value="" selected="selected">Select Your Country</option>
+                                  <option value="General Motors">Japan</option>
+                                  <option value="Land Rover">Australia</option>
+                                  <option value="Lexus">Bangladesh</option>
+                                  <option value="Lincoln">Japan</option>
+                                  <option value="Lincoln">Bangladesh</option>
+                              </select>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="single-form">
+                          <div class="select-input-wrapper">
+                              <select class="select-input" name="category">
+                                  <option value="" selected="selected">Select City</option>
+                                  <option value="General Motors">Dhaka</option>
+                                  <option value="Land Rover">Khulna</option>
+                                  <option value="Lexus">Dhaka</option>
+                                  <option value="Lincoln">Khulna</option>
+                                  <option value="Lincoln">Dhaka</option>
+                              </select>
+                          </div>
+                      </div>
+                      #}
+
+                    <hr>
+                    <br>
+                    <div class="form-group col-lg-7 col-md-12 col-xs-12 ">
+
+
+
+                        {{ form_label(form.refuge,'Nom Refuge', {'label_attr':{'class' : 'field-label'}}) }}
+
+
+                        {{ form_widget(form.refuge,{'attr': {'class' : 'titre form-group '}}) }}
+
+
+
+                        <div id="ref_err">
+                            {{ form_errors(form.refuge) }}
+                        </div>
+
+                    </div>
+
+
+
+                    <br>
+
+                    <div class="form-group col-lg-7 col-md-6 col-xs-12">
+                        <br> <h4>Photo de profile</h4>
+
+                        <div class="form geroup">
+                            {{ form_widget(form.image,{'attr': {'class' : 'image form-group  '}}) }}
+                            <div id="des_err">
+                                {{ form_errors(form.image) }}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <hr>
+                    <div class="single-form">
+                        {{ form_row(form.ajout,{'attr': {'class' : 'thm-btn mt_30 mb_30' }}) }}
+                    </div>
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

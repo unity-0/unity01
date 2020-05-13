@@ -1,0 +1,30 @@
+association_homepage:
+    path:     /association
+    defaults: { _controller: AssociationBundle:Default:index }
+associtation_new:
+    path:  /association/ajout
+    defaults: { _controller: AssociationBundle:Association:new}
+associtation_index:
+    path:  /association/in
+    defaults: { _controller: AssociationBundle:Association:index}
+association_show:
+    path: /association/affich
+    defaults: { _controller: AssociationBundle:Association:show}
+association_edit:
+    path: /association/modif
+    defaults: { _controller: AssociationBundle:Association:edit}
+association_delete:
+    path: /association/effa
+    defaults: { _controller: AssociationBundle:Association:delete}
+
+all:
+    path:     /association/all
+    defaults: { _controller: AssociationBundle:Association:all }
+
+find_task:
+    path:     /association/find/{id}
+    defaults: { _controller: AssociationBundle:Association:find}
+
+create_task:
+    path:     /association/new
+    defaults: { _controller: AssociationBundle:Association:newa}

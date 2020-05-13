@@ -1,0 +1,64 @@
+
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <div class="form-group has-error">
+                {{ form_start(form) }}
+
+                {{ form_widget(form.titre,{'attr':{'type':'text','class':'form-control','placeholder':'titre...'}}) }}
+                <br> <br> <br>
+                {{ form_widget(form.description,{'attr':{'type':'textarea','class':'form-control','placeholder':'description...'}}) }}
+                <br> <br> <br>
+                {{ form_widget(form.photo,{'attr':{'type':'text','class':'form-control','placeholder':'photo...'}}) }}
+                <br> <br> <br>
+                {{ form_widget(form.date) }}
+                <br> <br> <br>
+                {{ form_widget(form.heure) }}
+                 <br> <br> <br>
+                {{ form_widget(form.Submit,{'attr':{'type':'text','class':'btn btn-common','placeholder':'Submit...'}}) }}
+                 <br> <br> <br>
+
+                {{ form_end(form) }}
+    </div>
+        <div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+        <br><br><br>
+
+        <div class="alert alert-warning" role="alert">
+            <h3>
+                In order to post in our blog you need to be connected, if you are not
+                you can join us by clicking <a href="{{ path('fos_user_registration_register') }}">HERE</a>
+                Or if you already have an account click <a href="{{ path('fos_user_security_login') }}" >HERE</a> to connect !
+            </h3>
+        </div>
+        </div>
+    {% endif %}
+    {% endblock %}
+
+
+
+
+
+
+{#
+<div class="container">
+  <div class="row">
+        <div class="">
+            <div class="form-group">
+
+
+           {{ form_start(form) }}
+
+
+           {{ form_row(form.photo) }}
+
+            {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+    #}
+
+
+

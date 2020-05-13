@@ -1,0 +1,82 @@
+camp_homepage:
+    path:     /
+    defaults: { _controller: CampBundle:Default:index }
+
+camp_ajout_refuge:
+    path:     /ajoutref
+    defaults: { _controller: CampBundle:Refuge:ajoutRefuge }
+camp_affiche_refuge:
+    path:     /afficheref
+    defaults: { _controller: CampBundle:Refuge:afficheRefuge }
+camp_update_refuge:
+    path:     /updateref/{id}
+    defaults: { _controller: CampBundle:Refuge:updateRefuge }
+camp_supprimer_refuge:
+    path:     /suppref/{id}
+    defaults: { _controller: CampBundle:Refuge:supprimerRefuge }
+camp_affiche_refuge_front:
+    path:     /afficheref-front
+    defaults: { _controller: CampBundle:Refuge:afficheRefugeFront }
+camp_affiche_refuge_front_populaire:
+    path:     /afficheref-frontP
+    defaults: { _controller: CampBundle:Refuge:affichePopular }
+camp_recherche_refuge:
+    path:     /rechercheref
+    defaults: { _controller: CampBundle:Refuge:rechercheByNom }
+
+search_ajax:
+    path:     /search
+    defaults: { _controller: CampBundle:Refuge:search }
+
+aff_search_refuge:
+    path:     /affsearch/{id}
+    defaults: { _controller: CampBundle:Refuge:affichesearch }
+
+camp_recherche_refuge_front:
+    path:     /rechercheref-front
+    defaults: { _controller: CampBundle:Refuge:rechercheRefuge }
+aff_search_front:
+    path:     /searchfront/{id}
+    defaults: { _controller: CampBundle:Refuge:affichesearchFront }
+
+
+
+camp_ajout_blog:
+    path:     /ajoutblog
+    defaults: { _controller: CampBundle:Blog:ajoutBlog }
+camp_affiche_blog:
+    path:     /afficheblog/{id}
+    defaults: { _controller: CampBundle:Blog:afficheBlog }
+
+camp_ajout_migrant:
+    path:     /ajoutprofile
+    defaults: { _controller: CampBundle:Migrant:ajoutMigrant }
+camp_affiche_migrant:
+    path:     /afficheprofile
+    defaults: { _controller: CampBundle:Migrant:afficheProfil }
+camp_profil_migrant:
+    path:     /profile-mig
+    defaults: { _controller: CampBundle:Migrant:profilMigrant}
+camp_update_migrant:
+    path:     /updatemig/{id}
+    defaults: { _controller: CampBundle:Migrant:updateMigrant }
+affichemigrant:
+    path:     /affichemig
+    defaults: { _controller: CampBundle:Migrant:afficheMigrant }
+camp_supprimer_migrant:
+    path:     /suppmig/{id}
+    defaults: { _controller: CampBundle:Migrant:supprimerMigrant }
+
+
+
+camp_chart:
+    path:     /chart
+    defaults: { _controller: CampBundle:Blog:stat}
+
+
+like_postAjax:
+    path:     /likepostajax
+    defaults: { _controller: CampBundle:LikePost:likepost }
+afiichelike:
+    path:     /affichelike
+    defaults: { _controller: CampBundle:LikePost:affichepost }

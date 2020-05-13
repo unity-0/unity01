@@ -1,0 +1,3 @@
+anonce_homepage:
+    path:     /
+    defaults: { _controller: AnonceBundle:Default:index }

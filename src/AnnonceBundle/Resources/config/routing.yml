@@ -1,0 +1,40 @@
+
+annonce_homepage:
+    path:     /
+    defaults: { _controller: AnnonceBundle:Default:index }
+add:
+    path:     /add
+    defaults: { _controller: AnnonceBundle:Default:add }
+listAnnonce:
+    path:     /listAnnonce
+    defaults: { _controller: AnnonceBundle:Default:listAnnonce }
+removeAnnonce:
+    path:     /delete/{id}
+    defaults: { _controller: AnnonceBundle:Default:supp }
+suppcom:
+    path:     /suppcom/{id}
+    defaults: { _controller: AnnonceBundle:Default:suppcom }
+updateAnnonce:
+    path:     /update/{id}
+    defaults: { _controller: AnnonceBundle:Default:updateAnnonce }
+afficherAnnonce:
+    path:     /page1/afficher
+    defaults: { _controller: AnnonceBundle:Default:afficher }
+listcom:
+    path:     /listcom
+    defaults: { _controller: AnnonceBundle:Default:listcom }
+addcom:
+    path:     /addcom
+    defaults: { _controller: AnnonceBundle:Default:addcom }
+updateCom:
+    path:     /updateCom/{id}
+    defaults: { _controller: AnnonceBundle:Default:updateCom }
+comA:
+    path:     /comA/{id}
+    defaults: { _controller: AnnonceBundle:Default:comA }
+afficherpfd:
+    path:     /pdf
+    defaults: { _controller: AnnonceBundle:Default:pdf}
+afficherCom:
+    path:     /page1/afficherCom
+    defaults: { _controller: AnnonceBundle:Default:afficherCom }

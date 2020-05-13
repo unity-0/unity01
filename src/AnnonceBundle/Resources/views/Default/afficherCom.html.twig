@@ -1,0 +1,44 @@
+{% extends'base.html.twig' %}
+{% block content %}
+    <section class="inner-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 sec-title colored text-center">
+                    <h2>Events</h2>
+                    <ul class="breadcumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-angle-right"></i></li>
+                        <li><span>Events Grid</span></li>
+                    </ul>
+                    <span class="decor"><span class="inner"></span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-feature sec-padding bg-color-fa pb_60">
+        <div class="container">
+            <div class="row events-grid">
+    {% for liste in liste %}
+
+        <div class="col-sm-6 col-md-4">
+                    <div class="event-post">
+                        <div class="thumb">
+                            <img src="{{ asset('annonce.jpg') }}" alt="">
+                            <div class="overlay">
+
+                            </div>
+                        </div>
+                        <div class="caption">
+                            <h3 class="title"><a href="#">  {{ liste.nom }}</a></h3>
+                            <p class="event-location">{{ liste.Description }}</p>
+                            <p class="event-location"><img style="width:230px;" src="{{ asset('uploads/Annonce/' ~ liste.photo) }}"
+                                class="card-img-top"></p>
+                            <a href="{{ path('comA', {"id":liste.id }) }}">Commentaire</a>
+                            <p class="event-location">{{ liste.Commentaire.contenu }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+{% endblock %}

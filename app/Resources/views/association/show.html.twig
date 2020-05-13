@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <form method="post">
+    <h1>Association</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ association.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom de l'Association</th>
+                <td>{{ association.nomAssociation }}</td>
+            </tr>
+            <tr>
+                <th> Numero de Telephone </th>
+                <td>{{ association.telAssociation }}</td>
+            </tr>
+            <tr>
+                <th>Emailassociation</th>
+                <td>{{ association.emailAssociation }}</td>
+            </tr>
+            <tr>
+                <th>Adresseassociation</th>
+                <td>{{ association.adresseAssociation }}</td>
+            </tr>
+            <tr>
+                <th>Descriptionassociation</th>
+                <td>{{ association.descriptionAssociation }}</td>
+            </tr>
+            <tr>
+                <th>Nompresidantassociation</th>
+                <td>{{ association.nomPresidantAssociation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('association_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('association_edit', { 'id': association.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </form>
+{% endblock %}

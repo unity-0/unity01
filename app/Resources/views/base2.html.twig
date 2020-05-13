@@ -33,13 +33,12 @@
 </head>
 
 <body>
-<section id="container">
     <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
     <!--header start-->
     {% block header %}
-
+    <section id="container">
     <header class="header black-bg">
         <div class="sidebar-toggle-box">
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -185,6 +184,7 @@
                 </li>
                 <!-- inbox dropdown end -->
                 <!-- notification dropdown start-->
+                {#
                 <li id="header_notification_bar" class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
                         <i class="fa fa-bell-o"></i>
@@ -227,7 +227,7 @@
                             <a href="index.html#">See all notifications</a>
                         </li>
                     </ul>
-                </li>
+                </li>#}
                 <!-- notification dropdown end -->
             </ul>
             <!--  notification end -->
@@ -243,25 +243,25 @@
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered"><a href="profile.html"><img src="{{ asset('back/img/ui-sam.jpg')}}" class="img-circle" width="80"></a></p>
-                    <h5 class="centered">Sam Soffes</h5>
+                    <h5 class="centered">ZIED</h5>
                     <li class="mt">
-                        <a class="active" href="index.html">
+                        <a class="active" href="{{ path('temp_dash1')}}">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="javascript:;" class="active" >
                             <i class="fa fa-desktop"></i>
-                            <span>UI Elements</span>
+                            <span>Gestion de Rrefuges</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="general.html">General</a></li>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="panels.html">Panels</a></li>
-                            <li><a href="font_awesome.html">Font Awesome</a></li>
+                            <li><a href="{{ path('camp_affiche_refuge')}}">Listes</a></li>
+                            <li><a href="{{ path('camp_recherche_refuge')}}">Recherche</a></li>
+                            <li><a href="{{ path('camp_ajout_refuge')}}">Ajout</a></li>
+
                         </ul>
+                        {#
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
@@ -319,25 +319,22 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="inbox.html">
+                    #}
+                    <li>
+                        <a href="{{ path('mailing_send_mail')}}">
                             <i class="fa fa-envelope"></i>
                             <span>Mail </span>
-                            <span class="label label-theme pull-right mail-info">2</span>
                         </a>
                     </li>
+
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="{{ path('camp_chart')}}">
                             <i class=" fa fa-bar-chart-o"></i>
-                            <span>Charts</span>
+                            <span>Statistique</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="morris.html">Morris</a></li>
-                            <li><a href="chartjs.html">Chartjs</a></li>
-                            <li><a href="flot_chart.html">Flot Charts</a></li>
-                            <li><a href="xchart.html">xChart</a></li>
-                        </ul>
+
                     </li>
-                    <li class="sub-menu">
+                  {#<li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-comments-o"></i>
                             <span>Chat Room</span>
@@ -352,11 +349,13 @@
                             <i class="fa fa-map-marker"></i>
                             <span>Google Maps </span>
                         </a>
-                    </li>
+                    </li> #}
                 </ul>
                 <!-- sidebar menu end-->
             </div>
         </aside>
+    <section id="main-content">
+        <section class="wrapper">
     {% endblock %}
 
     {% block content %}
@@ -364,7 +363,9 @@
     {% endblock %}
 
 {% block footer %}
+
     <!--footer start-->
+
     <footer class="site-footer">
         <div class="text-center">
             <p>
@@ -383,7 +384,10 @@
                 <i class="fa fa-angle-up"></i>
             </a>
         </div>
+        <link href="{{  asset('back/css/style.css')}}" rel="stylesheet">
+
     </footer>
+        </section>
     <!--footer end-->
 {% endblock %}
 
@@ -392,7 +396,7 @@
         <script src="{{  asset('back/lib/jquery/jquery.min.js')}}"></script>
 
         <script src="{{  asset('back/lib/bootstrap/js/bootstrap.min.js')}}"></script>
-        <script class="include" type="text/javascript" src="{{  asset('back/llib/jquery.dcjqaccordion.2.7.js')}}"></script>
+        <script class="include" type="text/javascript" src="{{  asset('back/lib/jquery.dcjqaccordion.2.7.js')}}"></script>
         <script src="{{  asset('back/lib/jquery.scrollTo.min.js')}}"></script>
         <script src="{{  asset('back/lib/jquery.nicescroll.js')}}" type="text/javascript"></script>
         <script src="{{  asset('back/lib/jquery.sparkline.js')}}"></script>
@@ -466,5 +470,6 @@
             }
         </script>
     {% endblock %}
-</body>
-</html>
+
+    </section></section></body></html>
+

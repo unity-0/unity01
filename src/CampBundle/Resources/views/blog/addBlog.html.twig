@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<section class="inner-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 sec-title colored text-center">
+                <h2>BLOG</h2>
+                <ul class="breadcumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-angle-right"></i></li>
+                    <li><span>Blog</span></li>
+                </ul>
+                <span class="decor"><span class="inner"></span></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec-padding donation-section">
+    <div class="container">
+        <h2 class="text-thm">Ajouter un POST </h2>
+        <hr>
+        <div class="donation-form-outer">
+
+                <!--Form Portlet-->
+                <div class="form-portlet">
+                    <h3>Formulaire d'ajout : </h3>
+
+                    <div class="row clearfix">
+
+                        <div class="form-group col-lg-7 col-md-12 col-xs-12 ">
+
+                            {{ form_start(form) }}
+
+
+                            {{ form_label(form.refuge,'Nom Refuge', {'label_attr':{'class' : 'field-label'}}) }}
+
+
+                            {{ form_widget(form.refuge,{'attr': {'class' : 'titre form-group '}}) }}
+
+
+
+                            <div id="ref_err">
+                                {{ form_errors(form.refuge) }}
+                            </div>
+
+
+
+                            {{ form_label(form.titre,'Titre', {'label_attr':{'class' : 'field-label'}}) }}
+
+
+                            {{ form_widget(form.titre,{'attr': {'class' : 'titre form-group '}}) }}
+                            <div id="titre_err">
+                                {{ form_errors(form.titre) }}
+                            </div>
+
+
+
+                            {{ form_label(form.description,'Description', {'label_attr':{'class' : 'field-label'}}) }}
+
+
+                            {{ form_widget(form.description,{'attr': {'class' : 'description form-group '}}) }}
+                            <div id="des_err">
+                                {{ form_errors(form.description) }}
+                            </div>
+
+
+                                {{ form_label(form.image,'image', {'label_attr':{'class' : 'field-label'}}) }}
+                                {{ form_widget(form.image,{'attr': {'class' : 'image form-group '}}) }}
+                                <div id="des_err">
+                                    {{ form_errors(form.image) }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    <div class="text-center">
+                    {{ form_row(form.Ajouter,{'attr': {'class' : 'thm-btn mt_30 mb_30' }}) }}
+                    </div>
+
+                </div>
+                </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

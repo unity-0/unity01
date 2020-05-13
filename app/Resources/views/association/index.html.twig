@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block content
+%}
+    <h1>Associations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Association</th>
+                <th>Telassociation</th>
+                <th>Emailassociation</th>
+                <th>Adresseassociation</th>
+                <th>Descriptionassociation</th>
+                <th>Nompresidantassociation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for association in associations %}
+            <tr>
+                <td><a href="{{ path('association_show', { 'id': association.id }) }}">{{ association.id }}</a></td>
+                <td>{{ association.nomAssociation }}</td>
+                <td>{{ association.telAssociation }}</td>
+                <td>{{ association.emailAssociation }}</td>
+                <td>{{ association.adresseAssociation }}</td>
+                <td>{{ association.descriptionAssociation }}</td>
+                <td>{{ association.nomPresidantAssociation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('association_show', { 'id': association.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('association_edit', { 'id': association.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="http://localhost/unity01/web/app_dev.php/association/ajout">Create a new association</a>
+        </li>
+    </ul>
+{% endblock %}

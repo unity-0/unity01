@@ -1,5 +1,32 @@
+mailing:
+    resource: "@MailingBundle/Resources/config/routing.yml"
+    prefix:
+evenement_evenement:
+    resource: "@EvenementBundle/Controller/EvenementController.php"
+    type:     annotation
+
+evenement:
+    resource: "@EvenementBundle/Resources/config/routing.yml"
+    prefix:   /
+action:
+    resource: "@ActionBundle/Resources/config/routing.yml"
+    prefix:   /
+camp:
+    resource: "@CampBundle/Resources/config/routing.yml"
+    prefix:   /
+
 temp:
     resource: "@TempBundle/Resources/config/routing.yml"
+    prefix:   /
+association:
+    resource: "@AssociationBundle/Resources/config/routing.yml"
+    prefix:   /
+anonce:
+    resource: "@AnonceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+annonce:
+    resource: "@AnnonceBundle/Resources/config/routing.yml"
     prefix:   /
 
 user:
@@ -12,3 +39,12 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message
+
+esprit_api:
+    resource: "@AssociationBundle/Resources/config/routing.yml"
+    prefix:   /api
+

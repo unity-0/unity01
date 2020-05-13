@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <section id="main-content">
+    <section class="wrapper">
+        <section class="row mt">
+
+
+            <section class="panel">
+
+                <div class="chat-room-head">
+                    <h3>Modifier Commentaire</h3>
+                    <form action="#" class="pull-right position">
+
+                    </form>
+                </div>
+
+                <center>
+
+
+                    {{ form_start(form) }}
+
+                    <table>
+                        <div class="form-group">
+                            <tr>
+
+                                <label >contenu </label>
+                                {{ form_widget(form.contenu) }}
+
+
+
+                            </tr>
+                        </div>
+
+
+
+
+
+
+
+                        {{ form_end(form) }}
+                        <div class="compose-btn">
+                            <tr>
+
+                                <button class="btn btn-sm"><i class="fa fa-times"></i> <a href="{{ path('listcom') }}">Back to the list</a></button>
+                            </tr>
+                        </div><br>
+
+                        <div class="compose-btn">
+                            <tr>
+
+
+                            </tr>
+                        </div><br>
+
+
+                        <div class="compose-btn">
+                            <tr>
+
+
+                            </tr>
+                        </div><br>
+
+                        <div class="compose-btn">
+                            <tr>
+
+                            </tr>
+                        </div><br>
+                        <span class="fileupload-process"></span>
+                    </table>
+
+
+                    <input class="btn btn-info" type="submit" value="Modifier" />
+
+                    <ul>
+                        <li>
+                        </li>
+                    </ul>
+                </center>
+
+            </section>
+        </section>
+    </section>
+
+
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'base2.html.twig' %}
+{% block content %}
+
+    <section id="main-content">
+
+        <section class="wrapper">
+            <h3><i class="fa fa-angle-right"></i> Liste de Annonces </h3>
+
+            <a href="{{ path('afficherpfd') }}" class="btn btn-primary btn-round">imprimer </a>
+            <div class="col-xs-12">
+                <br>
+                <button class="btn btn-info btn-icon-text" onclick="window.print();"><i class="mdi mdi-printer btn-icon-append"></i>IMPRIMER</button>
+
+            </div>
+
+            <script src="{{ asset('js2/jquery.min.js') }}"></script>
+
+            <th> <input type="text" id="search" placeholder="Search  ..."></th>
+
+
+            <div class="row mb">
+                <!-- page start-->
+                <div class="content-panel">
+                    <div class="adv-table">
+                        <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info"  >
+
+                            <thead>
+                            <th class="column1"> id </th>
+                            <th class="column2">Nom</th>
+                            <th class="column3">Description</th>
+                            <th class="column4">Date</th>
+                            <th class="column4">Commentaire</th>
+                            <th class="column4">Photo</th>
+
+
+                            </thead>
+
+                            <tbody>
+
+
+                            {% for c in annonce  %}
+                            <tr >
+
+                                <td> {{ c.id  }} </td>
+
+                                <td> {{ c.nom  }} </td>
+
+                                <td> {{ c.description}} </td>
+
+                                <td> {{ c.date| date  }} </td>
+                                <td> {{ c.commentaire.contenu  }}</td>
+                                <td>  <img style="width:230px;" src="{{ asset('uploads/Annonce/' ~ c.photo) }}"
+                                                                                  class="card-img-top"></td>
+
+
+
+                                <td>
+                                    <div class="compose-btn">
+                                        <ul>
+                                            <li>
+                                                <button class="btn btn-theme02"><i class="fa fa-angle-right"></i> <a href="{{ path('removeAnnonce', {'id':c.id }) }}">Supprimer</a></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="compose-btn">
+                                        <ul>
+                                            <li>
+                                                <button class="btn btn-theme02"><i class="fa fa-angle-right"></i> <a href="{{ path('updateAnnonce', {"id":c.id }) }}">Modifier</a></button>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                </td>
+                                {% endfor %}
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+
+                        <ul>
+                            <li>
+                                <button class="btn btn-round btn-success"><i class="fa fa-check"></i><a href="{{ path('add') }}">Create a new produit</a></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#hidden-table-info tbody tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found == 'true')
+                    {
+                        $(this).show();
+
+                    }
+                    else
+                    {
+                        $(this).hide();
+
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+
+{% endblock %}

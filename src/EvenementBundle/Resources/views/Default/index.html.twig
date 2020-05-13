@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<h1>Ajouter Don</h1>
+
+    {{ form_start(form) }}
+    {{ form_label(form.codeSecurite,'codeSecurite', {'label_attr':{'class' : 'codeSecurite'}}) }}
+    {{ form_widget(form.codeSecurite,{'attr': {'class' : 'codeSecurite form-required'}}) }}
+    {{ form_label(form.montant, 'montant', {'field-label':{'class' : 'montant'}}) }}
+    {{ form_widget(form.montant,{'attr': {'class' : 'montant form-required'}}) }}
+   <div> {{ form_label(form.cardNum,'Numero de carte', {'label_attr':{'class' : 'cardNum'}}) }}
+    {{ form_widget(form.cardNum,{'attr': {'class' : 'cardNum form-required'}}) }}
+       {{ form_label(form.nom,'nom', {'label_attr':{'class' : 'nom'}}) }}
+       {{ form_widget(form.nom,{'attr': {'class' : 'nom form-required'}}) }}
+   </div>
+
+    <div> {{ form_label(form.email,'email', {'label_attr':{'class' : 'email'}}) }}
+        {{ form_widget(form.email,{'attr': {'class' : 'email form-required'}}) }}
+        {{ form_label(form.telephone,'telephone', {'label_attr':{'class' : 'telephone'}}) }}
+        {{ form_widget(form.telephone,{'attr': {'class' : 'telephone form-required'}}) }}
+    </div>
+    {{ form_end(form) }}
+
+
+
+
+
+
+
+
+{% endblock %}

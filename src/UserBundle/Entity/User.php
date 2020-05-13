@@ -33,6 +33,8 @@ class User extends BaseUser
      *
      * @return int
      */
+
+
     public function getId()
     {
         return $this->id;

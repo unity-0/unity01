@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Evenements list</h1>
+<div class="container">
+        {% if app.session.flashBag.has('success') %}
+            <div class="alert alert-success">
+                {% for msg in app.session.flashBag.get('success') %}
+                    <p align="center">{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="table-responsive ">
+                    <a href="{{ path('pdf') }}" class="btn btn-primary btn-round">imprimer </a>
+
+                    <table id="myTable" style="width: 100% !important;"
+                           class="table table-bordered table-condensed table-hover table-striped display responsive nowrap">
+                        <thead>
+
+
+                        <th><class="col-md-1 col-xs-1">Id</th>
+                        <th><class="col-md-1 col-xs-1">Nom</th>
+                        <th><class="col-md-1 col-xs-1">Lieu</th>
+                        <th><class="col-md-1 col-xs-1">Date</th>
+                        <th><class="col-md-1 col-xs-1">Heure</th>
+                        <th><class="col-md-1 col-xs-1">Description</th>
+
+                        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                <td><a href="{{ path('evenement_show', { 'id': evenement.id }) }}">{{ evenement.id }}</a></td>
+                <td>{{ evenement.nom }}</td>
+                <td>{{ evenement.lieu }}</td>
+                <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if evenement.heure %}{{ evenement.heure|date('H:i:s') }}{% endif %}</td>
+                <td>{{ evenement.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('evenement_show', { 'id': evenement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('evenement_edit', { 'id': evenement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('evenement_new') }}">Create a new evenement</a>
+        </li>
+    </ul>
+   {# <div class="container">
+        {% if app.session.flashBag.has('success') %}
+            <div class="alert alert-success">
+                {% for msg in app.session.flashBag.get('success') %}
+                    <p align="center">{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+
+
+        <div class="row">
+
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="table-responsive ">
+                    <table id="myTable" style="width: 100% !important;"
+                           class="table table-bordered table-condensed table-hover table-striped display responsive nowrap">
+                        <thead>
+                        <tr>
+                            <th class="col-md-1 col-xs-1"> Titre</th>
+                            <th class="col-md-1 col-xs-1"> Type</th>
+                            <th class="col-md-1 col-xs-1"> Capacité</th>
+                            <th class="col-md-1 col-xs-1"> Type de réservation</th>
+                            <th class="col-md-1 col-xs-1"> Prix</th>
+                            <th class="col-md-1 col-xs-1"> Date </th>
+                            <th class="col-md-1 col-xs-1"> Durée</th>
+                            <th class="col-md-1 col-xs-1"> Localisation </th>
+                            <th class="col-md-1 col-xs-1"> Modification </th>
+
+                        </tr>
+                        </thead>
+                        {% for evenement in evenement %}
+                            <tr>
+                                <td><a href="{{ path('evenement_show', { 'id': evenement.id }) }}">{{ evenement.id }}</a></td>
+                                <td> {{ evenement.nom }}</td>
+                                <td> {{ evenement.lieux }}</td>
+                                <td> {{ evenement.date|date('Y-m-d H:m')  }}</td>
+                                <td> {{ evenement.heure }}</td>
+                                <td> {{ evenement.description }}</td>
+                                <td><a href="{{ path('edit', {'id':evenement.id}) }}"><img src="https://img.icons8.com/ios-glyphs/20/000000/services.png">  </a>
+                                    <a href="{{ path('delete', {'id':evenement.id}) }}"> <img src="https://img.icons8.com/material/26/000000/trash.png">
+                                    </a>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>#}
+{% endblock %}
